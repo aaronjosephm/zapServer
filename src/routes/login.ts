@@ -17,6 +17,7 @@ async function login(req: Request, res: Response) {
     const user = await realmApp.logIn(credentials);
     const token = { 
       accessToken: user.accessToken,
+      userId: user.id
     }
     res.send(token).status(200);
   } catch (error) {
